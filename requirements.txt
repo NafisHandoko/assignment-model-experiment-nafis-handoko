@@ -1,0 +1,7 @@
+pandas
+scikit-learn
+jupyter
+nbconvert
+ipykernel
+google-genai
+matplotlib
