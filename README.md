@@ -171,11 +171,18 @@ pip install -r requirements.txt
 
 ### 2. Set API key (opsional, hanya untuk LLM)
 
+Buat file `.env` di **root repo** (jangan di-commit — sudah di-exclude oleh `.gitignore`):
+
 ```bash
-export GEMINI_API_KEY="..."      # Gemini langsung
-# atau
-export OPENROUTER_API_KEY="..."  # fallback OpenRouter
+# .env  (letakkan di root, sejajar dengan README.md)
+GEMINI_API_KEY=***
+OPENROUTER_API_KEY=***
 ```
+
+Notebook membaca file ini otomatis via `python-dotenv` (`load_dotenv()` di cell setup). Cukup isi salah satu:
+
+- `GEMINI_API_KEY` — untuk memakai Gemini langsung (jalur utama).
+- `OPENROUTER_API_KEY` — untuk fallback ke OpenRouter (`deepseek/deepseek-v4-flash-0731`).
 
 Jika keduanya tidak di-set, bagian LLM akan gagal (ada pesan error yang jelas). Bagian model klasik tetap berjalan tanpa API key.
 

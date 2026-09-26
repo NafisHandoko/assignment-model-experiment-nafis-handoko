@@ -5,3 +5,4 @@ nbconvert
 ipykernel
 google-genai
 matplotlib
+python-dotenv
